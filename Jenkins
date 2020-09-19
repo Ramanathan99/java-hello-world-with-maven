@@ -1,0 +1,6 @@
+def AppName = "TestApp"
+
+node (){
+stage ('clone') {
+checkout scm
+}

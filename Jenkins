@@ -4,5 +4,8 @@ node (){
 stage ('clone') {
 checkout scm
 }
+stage ('test') {
+sh "mvn clean test"
+}
 } 
 

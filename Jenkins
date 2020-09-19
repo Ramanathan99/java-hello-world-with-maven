@@ -12,7 +12,7 @@ sh "mvn clean install"
 
 sh 'ls -la $WORKSPACE/target/'
 
-sh "mv $WORKSPACE/target/jb*.jar $WORKSPACE/target/${AppName}.jar"
+sh "mv $WORKSPACE/target/jb*.jar $WORKSPACE/target/\${AppName}.jar"
 
 sh 'ls -la $WORKSPACE/target/'
 

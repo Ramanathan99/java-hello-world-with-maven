@@ -17,5 +17,4 @@ sh 'mv $WORKSPACE/target/jb*.jar $WORKSPACE/target/\${AppName}.jar'
 sh 'ls -la $WORKSPACE/target/'
 
 }
-} 
-'
+}

@@ -7,5 +7,11 @@ checkout scm
 stage ('test') {
 sh "mvn clean test"
 }
+stage ('build') {
+sh "mvn clean install"
+
+sh 'ls -la $WORKSPACE/target/'
+
+}
 } 
 

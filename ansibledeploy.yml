@@ -1,0 +1,13 @@
+---
+ - hosts: all
+   become: yes
+   tasks: 
+    - name: copy jar to remote server
+      copy:
+         src: target/original-jb-hello-world-maven-0.1.0.jar
+         dest: /root/original-jb-hello-world-maven-0.1.0.jar
+         owner: root
+         group: root
+         mode: 0644
+    - name: create shell to deploy
+      command: java -jar /root/original-jb-hello-world-maven-0.1.0.jar & 

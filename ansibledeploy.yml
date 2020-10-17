@@ -1,5 +1,5 @@
 ---
- - hosts: all
+ - hosts: test
    become: yes
    tasks: 
     - name: copy jar to remote server

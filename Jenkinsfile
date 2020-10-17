@@ -4,10 +4,15 @@ def appName= 'testing'
 
 node{ 
 
+  parameters([
+    string(name: 'DEPLOY_ENV', defaultValue: 'TESTING' )
+   ])
+
 stage('cloning repo'){
   checkout scm
 }
 
+  
   stage('Test'){
 sh 'mvn clean test'
 }
@@ -24,4 +29,8 @@ sh 'mvn clean install'
     sh 'ls -la target/'
   }
   
+stage ('deploy') {
+   echo "Deploy start"
+   sh "ansible-playbook -i /root/inventory/${DEPLOY_ENV} ansibledeploy.yml"
+   }
 }

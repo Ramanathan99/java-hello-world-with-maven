@@ -31,6 +31,6 @@ sh 'mvn clean install'
   
 stage ('deploy') {
    echo "Deploy start"
-   sh "ansible-playbook -i /root/inventory/${DEPLOY_ENV} ansibledeploy.yml"
+   sh "ansible-playbook -i /etc/ansible/${DEPLOY_ENV} ansibledeploy.yml"
    }
 }
